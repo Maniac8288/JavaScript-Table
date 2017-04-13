@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using JavaScript_Table.Models;
 using System.Web.Mvc;
 
 namespace JavaScript_Table.Controllers
@@ -10,21 +7,31 @@ namespace JavaScript_Table.Controllers
     {
         public ActionResult Index()
         {
-            return View();
+            var users = UsersRepository.GetUsers();
+            return View(users);
         }
-
-        public ActionResult About()
+        public JsonResult GetUsers()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var jsondata = UsersRepository.GetUsers();
+            return Json(jsondata, JsonRequestBehavior.AllowGet);
         }
-
-        public ActionResult Contact()
+        [HttpPost]
+        public ActionResult AddUsers(Users user)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            UsersRepository.InsertUser(user);
+            return Json(user, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult EditUser(Users user)
+        {
+            UsersRepository.EditUser(user);
+            return Json(user, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public ActionResult DeleteUser(int Id)
+        {
+            UsersRepository.DeleteUser(Id);
+            return Json("Удален");
         }
     }
 }

@@ -1,0 +1,51 @@
+﻿<div class="col-md-9" style="float:right;">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h2 class="panel-title">Список пользователй</h2>
+        </div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered table-condensed">
+                <thead>
+                    <tr>
+                        <th data-column="Id">
+                            ID
+                            <span>
+                                <i></i>
+                            </span>
+                        </th>
+                        <th data-column="FirstName">
+                            Имя
+                            <span>
+                                <i></i>
+                            </span>
+                        </th>
+                        <th data-column="LastName">
+                            Фамилия
+                            <span>
+                                <i></i>
+                            </span>
+                        </th>
+                  
+                    </tr>
+                </thead>
+
+                <tbody  data-bind="foreach: Items2()">
+                   
+                    
+                   
+                    <tr>
+                        <td data-bind="text:Id"></td>
+                        <td data-bind="text:FirstName"></td>
+                        <td data-bind="text:LastName"></td>
+
+                       
+                    </tr>
+                  
+                </tbody>
+
+            </table>
+         
+
+        </div>
+    </div>
+</div>

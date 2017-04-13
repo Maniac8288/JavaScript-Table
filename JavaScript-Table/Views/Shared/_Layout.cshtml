@@ -36,8 +36,11 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+
+
+    
+    <script src="~/Scripts/require.js" data-main="~/Scripts/Requiere/init"></script>
+    <script src="~/Scripts/requiere/Config.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
