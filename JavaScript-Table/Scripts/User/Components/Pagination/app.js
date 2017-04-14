@@ -1,4 +1,4 @@
-﻿define(["require", "jquery", "knockout"], function (require, $, ko) {
+﻿define(["require", "exports", "jquery", "knockout"], function (require, exports, $, ko) {
     "use strict";
     /**
      * Компоненты

@@ -1,5 +1,5 @@
 ﻿var Component = Component || {};
-define(["require", "jquery", "knockout", 'User/Models/UserModels'], function (require, $, ko, UserModel) {
+define(["require", "jquery", "knockout", 'User/Models/UserModels', "User/Components/Add/app"], function (require, $, ko, UserModel, Users) {
 
     if (Component.Table) {
         console.log('Такой класс Component.Table уже существует');
@@ -26,12 +26,21 @@ define(["require", "jquery", "knockout", 'User/Models/UserModels'], function (re
             success: this.callback.bind(this),
         });
     };
-
+    Users.Component.UserTableAdd.prototype.Test = function () {
+     
+        var ticker = new Test();
+        ticker.bind('tick', function (date) {
+            alert(date.Id + " " + date.LastName + " " + date.FirstName);
+        });
+        }
     Component.Table.prototype.callback = function (data) {
         this.Items2.push({ Id: 3, FirstName: 'Ntcn', LastName: 'test' });
         console.log(" Items после добавления:", this.Items2())
     }
-
+    
+   //$(document).addEventListener('TestEvent', function (event) {
+   //     alert(event.detail);
+   // });
    
    
 
